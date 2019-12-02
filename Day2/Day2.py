@@ -38,3 +38,26 @@ Created on Mon Dec  2 12:25:21 2019
 #cv2.COLOR_BGR2HSL
 #cv2.COLOR_BGR2LAB
 
+#==============================================================
+
+import cv2
+
+img_path='D:\\1st-DL-CVMarathon\\1st-DL-CVMarathon\\Day2\\lena.png'
+
+img = cv2.imread(img_path,1)
+img_HLS = cv2.cvtColor(img,cv2.COLOR_BGR2HLS)
+img_LAB = cv2.cvtColor(img,cv2.COLOR_BGR2LAB)
+
+while True:
+    cv2.imshow('bgr',img) 
+    cv2.imshow('HLS',img_HLS)
+    cv2.imshow('LAB',img_LAB)
+    k = cv2.waitKey(0)
+    if k == 27:
+        cv2.destroyAllWindows()
+        break
+
+#cv2.waitKey(0) #waitkey作用為不斷刷新圖像，0代表顯示第一偵圖
+#cv2.destroyAllWindows() #按下任意鍵關閉所有視窗
+
+
